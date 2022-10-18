@@ -1,10 +1,6 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext("2d");
 
-function drawRectangle(dx, dy) {
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(dx, dy, 150, 75);
-}
 
 function drawHouse(dx, dy) {
     // Set line width
@@ -31,14 +27,16 @@ let dy = 0;
 
 function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    dx += 2;
-    dy += 1;
 
-    drawRectangle(dx, dy);
-    drawHouse(dx, dy)
+    drawHouse(dx, dy);
+
+    // lenear animation
+    dx += 0.5;
+    dy += 1;
+     
     requestAnimationFrame(() => {
         draw();
-    })
+    });
 }
 
 draw();

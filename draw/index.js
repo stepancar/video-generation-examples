@@ -1,10 +1,6 @@
 const canvas = document.querySelector('canvas')
 const ctx = canvas.getContext("2d");
 
-function drawRectangle() {
-    ctx.fillStyle = "#FF0000";
-    ctx.fillRect(0, 0, 150, 75);
-}
 
 function drawHouse() {
     // Set line width
@@ -26,5 +22,4 @@ function drawHouse() {
     ctx.stroke();
 }
 
-drawRectangle();
 drawHouse();
