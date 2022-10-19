@@ -3,21 +3,22 @@ const ctx = canvas.getContext("2d");
 const img = document.querySelector("img");
 
 
-function drawImage(dx, dy) {
-    ctx.drawImage(img, dx, dy, 150, 180);
+function drawVideo(dx, dy) {
+    ctx.drawImage(img, dx, dy, 180, 130);
 }
 
-let dx = 0;
-let dy = 0;
+let angle = 0;
 
 function draw() {
+    ctx.resetTransform();
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    drawImage(dx, dy);
-
+    
+    ctx.translate(150, 90)
+    ctx.rotate(angle);
+    drawVideo(0, 0);
+    
     // lenear animation
-    dx += 0.5;
-    dy += 1;
+    angle += Math.PI / 60;
      
     requestAnimationFrame(() => {
         draw();

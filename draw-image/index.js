@@ -3,8 +3,9 @@ const ctx = canvas.getContext("2d");
 const img = document.querySelector("img");
 
 
-function drawImage() {
-    ctx.drawImage(img, 10, 10, 150, 180);
+function drawVideo() {
+    ctx.setTransform(1, Math.tan(Math.PI / 8), 0, 1, 0, 0);
+    ctx.drawImage(img, 10, 10);
 }
 
-drawImage();
+drawVideo();
